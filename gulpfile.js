@@ -199,6 +199,7 @@ gulp.task('images', function () {
 });
 
 gulp.task('watch', function () {
+    gulp.watch('src/img/**/*', ['images']);
     gulp.watch('src/js/*.js', ['jshint']);
     gulp.watch('src/less/*.less', ['less']);
 });
