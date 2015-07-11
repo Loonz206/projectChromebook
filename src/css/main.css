@@ -356,3 +356,18 @@ td,
 th {
   padding: 0;
 }
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+/*
+Areas can be made seperated with an arrow //> to indicate a repurpose of the
+layout.
+*/
