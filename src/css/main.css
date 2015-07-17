@@ -356,12 +356,19 @@ td,
 th {
   padding: 0;
 }
+/**
+ * These are the functions used throughout the application. This is where
+ * overwrites that are not specific to components should be maintained.
+ */
+/* cubic-bezier, animationName, point-01, point-02, point-03, point-04 */
+/* loading animation */
+/* 900px / 16px */
+/* 760px / 16px */
 html {
   font-size: 62.5%;
 }
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  background-color: #aeaeae;
   font-size: 14px;
   font-size: 1.4rem;
   line-height: 24px;
@@ -405,7 +412,7 @@ h5 {
   line-height: 26px;
   line-height: 2.6rem;
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: 300;
 }
 h6 {
   font-size: 16px;
@@ -414,6 +421,50 @@ h6 {
   line-height: 2.6rem;
   text-transform: lowercase;
   font-weight: 300;
+}
+hr {
+  border: 0;
+  height: 1px;
+  background: #333;
+  background-image: linear-gradient(to right, #cccccc, #333333, #cccccc);
+}
+blockquote {
+  background: #f9f9f9;
+  border-left: 10px solid #ccc;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  quotes: "\201C" "\201D" "\2018" "\2019";
+}
+blockquote:before {
+  color: #ccc;
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+blockquote p {
+  display: inline;
+}
+a {
+  color: #3498db;
+  text-decoration: none;
+  border-bottom: 1px dotted #999;
+}
+a:hover,
+a:focus {
+  color: #196090;
+  border-bottom: 1px solid #3498db;
+}
+a:active {
+  color: #ffffff;
+  background: #3498db;
+}
+::selection {
+  background: #f1c40f;
+}
+::-moz-selection {
+  background: #f1c40f;
 }
 .lead {
   font-weight: 100;
@@ -426,6 +477,14 @@ h6 {
 Areas can be made seperated with an arrow //> to indicate a repurpose of the
 layout.
 */
+figure figcaption {
+  text-align: center;
+}
+figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
 main {
   margin: auto;
   width: 720px;

@@ -9,7 +9,6 @@ html {
 
 body {
     font-family: @sansSerif;
-    background-color: #aeaeae;
     font-size: 14px;
     font-size: 1.4rem;
     line-height: 24px;
@@ -54,17 +53,69 @@ h5 {
     line-height: 26px;
     line-height: 2.6rem;
     text-transform: uppercase;
-    font-weight: 600;
+    font-weight: 300;
 }
 
 h6 {
-     font-size: 16px;
+    font-size: 16px;
     font-size: 1.6rem;
     line-height: 26px;
     line-height: 2.6rem;
     text-transform: lowercase;
     font-weight: 300;
 }
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #333;
+    background-image: linear-gradient(to right, #ccc, #333, #ccc);
+}
+
+blockquote {
+  background: #f9f9f9;
+  border-left: 10px solid #ccc;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+}
+blockquote:before {
+  color: #ccc;
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+blockquote p {
+  display: inline;
+}
+
+p {}
+
+a {
+    color:@primaryColor;
+    text-decoration: none;
+    border-bottom: 1px dotted #999;
+    &:hover, &:focus {
+        color: darken(@primaryColor, 20%);
+        border-bottom: 1px solid @primaryColor;
+    }
+    &:active {
+        color:@white;
+        background:@primaryColor;
+    }
+}
+
+::selection {
+    background:@accentColor;
+}
+
+::-moz-selection {
+    background:@accentColor;
+}
+
+
 
 .lead {
     font-weight: 100;
