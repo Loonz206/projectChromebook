@@ -374,6 +374,12 @@ body {
   line-height: 24px;
   line-height: 2.4rem;
 }
+@media only screen and (max-width: 47.5em) {
+  body {
+    line-height: 21px;
+    line-height: 2.1rem;
+  }
+}
 h1,
 h2,
 h3,
@@ -388,11 +394,23 @@ h1 {
   line-height: 35px;
   line-height: 3.5rem;
 }
+@media only screen and (max-width: 47.5em) {
+  h1 {
+    line-height: 33px;
+    line-height: 3.3rem;
+  }
+}
 h2 {
   font-size: 21px;
   font-size: 2.1rem;
   line-height: 31px;
   line-height: 3.1rem;
+}
+@media only screen and (max-width: 47.5em) {
+  h2 {
+    line-height: 29px;
+    line-height: 2.9rem;
+  }
 }
 h3 {
   font-size: 18px;
@@ -400,11 +418,23 @@ h3 {
   line-height: 28px;
   line-height: 2.8rem;
 }
+@media only screen and (max-width: 47.5em) {
+  h3 {
+    line-height: 26px;
+    line-height: 2.6rem;
+  }
+}
 h4 {
   font-size: 16px;
   font-size: 1.6rem;
   line-height: 26px;
   line-height: 2.6rem;
+}
+@media only screen and (max-width: 47.5em) {
+  h4 {
+    line-height: 23px;
+    line-height: 2.3rem;
+  }
 }
 h5 {
   font-size: 16px;
@@ -414,6 +444,12 @@ h5 {
   text-transform: uppercase;
   font-weight: 300;
 }
+@media only screen and (max-width: 47.5em) {
+  h5 {
+    line-height: 23px;
+    line-height: 2.3rem;
+  }
+}
 h6 {
   font-size: 16px;
   font-size: 1.6rem;
@@ -421,6 +457,12 @@ h6 {
   line-height: 2.6rem;
   text-transform: lowercase;
   font-weight: 300;
+}
+@media only screen and (max-width: 47.5em) {
+  h6 {
+    line-height: 23px;
+    line-height: 2.3rem;
+  }
 }
 hr {
   border: 0;
