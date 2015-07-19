@@ -467,18 +467,18 @@ h6 {
 hr {
   border: 0;
   height: 1px;
-  background: #333;
-  background-image: linear-gradient(to right, #cccccc, #333333, #cccccc);
+  background: #444444;
+  background-image: linear-gradient(to right, #cccccc, #444444, #cccccc);
 }
 blockquote {
   background: #f9f9f9;
-  border-left: 10px solid #ccc;
+  border-left: 10px solid #cccccc;
   margin: 1.5em 10px;
   padding: 0.5em 10px;
   quotes: "\201C" "\201D" "\2018" "\2019";
 }
 blockquote:before {
-  color: #ccc;
+  color: #cccccc;
   content: open-quote;
   font-size: 4em;
   line-height: 0.1em;
