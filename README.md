@@ -3,6 +3,6 @@ projectChromebook
 
 This is an example SPA setup I am toying with for the purpose of seeing how effecient a development machine my Acer C270 is.
 
-I have 4 gig of Ram on this machine and have opted for Sublime Text 3 as my text editor and gulp as my javascript task runner.
+Totally pumped that you can run Linux on a Chromebook, it's very economical as a travel buddy for
+development purposes. Now to look for an API.
 
-Totally messing around. Seeing the changes.
