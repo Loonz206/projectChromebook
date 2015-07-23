@@ -5,6 +5,7 @@ var stylish   = require('jshint-stylish');
 var concat    = require('gulp-concat');
 var uglify    = require('gulp-uglify');
 var imagemin  = require('gulp-imagemin');
+var sourcemaps = require('gulp-sourcemaps');
 var notify    = require('gulp-notify');
 var rename    = require('gulp-rename');
 var cache     = require('gulp-cache');
@@ -182,7 +183,9 @@ gulp.task('jshint', function () {
 gulp.task('less', function () {
     return gulp.src('src/less/main.less')
     .pipe(plumber())
+    .pipe(sourcemaps.init())
     .pipe(less())
+    .pipe(sourcemaps.write())
     .pipe(gulp.dest('src/css'))
     .pipe(rename({suffix: '.min'}))
     .pipe(minifycss())
