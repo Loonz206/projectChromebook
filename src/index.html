@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html class="no-js" lang="" ng-app="myApp">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -48,13 +48,17 @@
                 </section>
             </main>
 
+            <div ng-controller = "MyController">
+                <h1>{{playerList[1].name}}</h1>
+                <p>{{playerList[1].positionNumber}}</p>
+            </div>
+
 
 
             <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
             <script src="js/vendor/picturefill.js"></script>
             <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.3.min.js"><\/script>')</script>
-            <script>if (!window.angularjs) { document.write('<script src="js/vendor/angular.min.js"><\/script>'); }
-            </script>
+            <script>window.angularjs || document.write('<script src="js/vendor/angular.min.js"><\/script>')</script>
             <script src="js/plugins.js"></script>
             <script src="js/main.js"></script>
 
