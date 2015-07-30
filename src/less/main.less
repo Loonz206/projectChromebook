@@ -11,6 +11,11 @@ Areas can be made seperated with an arrow //> to indicate a repurpose of the
 layout.
 */
 
+nav {
+	height: 60px;
+	background-color: @primaryColor;
+	box-shadow: 0 1px 1px 1px @flatGrey;
+}
 
 figure figcaption {
         text-align: center;
@@ -24,7 +29,10 @@ figure img {
 
 main {
     margin:auto;
-    width:720px;
+    width:70%;
+    .Responsive(@desktopSize,{
+			width:94%;
+    	});
 }
 
 

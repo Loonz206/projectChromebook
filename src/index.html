@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html class="no-js" lang="" ng-app="myApp">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -41,7 +41,7 @@
                         <figcaption>Some Strange Placeholder</figcaption>
                     </figure>
                     <hr>
-                    <p class="lead">Lorem ipsum dolor sit amet, consectetur <em>some emphasis.</em> adipisicing elit. Repellat et consequatur, odit a porro libero nesciunt reprehenderit minima. Illum laboriosam earum numquam assumenda odio <a href="">deserunt</a> at repellat dolor, dicta ut?</p>
+                    <p class="lead">Lorem ipsum dolor sit amet, consectetur <em>some emphasis.</em> adipisicing elit. Repellat et consequatur, odit a porro libero nesciunt reprehenderit minima. Illum laboriosam earum numquam assumenda odio at repellat dolor, dicta ut?</p>
                     <p>A bunch of nothing. Sample sentences and other misc. stuff. Lorem ipsum would go here and as well any other details of the project. etc. etc.</p>
                     <blockquote>Holy cripes this is a blockquote.</blockquote>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit animi a enim porro in, aperiam quidem maxime, architecto ex deleniti <a href="">Some Link</a> dolorem ullam corporis <strong>dolore</strong> consequatur vero distinctio eum maiores iure.</p>
@@ -56,13 +56,17 @@
                 </form>
             </main>
 
+            <div ng-controller = "MyController">
+                <h1>{{playerList[1].name}}</h1>
+                <p>{{playerList[1].positionNumber}}</p>
+            </div>
+
 
 
             <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
             <script src="js/vendor/picturefill.js"></script>
             <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.3.min.js"><\/script>')</script>
-            <script>if (!window.angularjs) { document.write('<script src="js/vendor/angular.min.js"><\/script>'); }
-            </script>
+            <script>window.angularjs || document.write('<script src="js/vendor/angular.min.js"><\/script>')</script>
             <script src="js/plugins.js"></script>
             <script src="js/main.js"></script>
 
