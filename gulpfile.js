@@ -178,7 +178,7 @@ gulp.task('jshint', function () {
     .pipe(rename({suffix: '.min'}))
     .pipe(uglify())
     .pipe(gulp.dest('dist/js'))
-    .pipe(browserSync.stream())
+    .pipe(browserSync.stream({stream:true}))
     .pipe(notify({ message: 'Jshint task complete'}));
 });
 
@@ -192,7 +192,7 @@ gulp.task('less', function () {
     .pipe(rename({suffix: '.min'}))
     .pipe(minifycss())
     .pipe(gulp.dest('dist/css'))
-    .pipe(browserSync.stream())
+    .pipe(browserSync.stream({stream:true}))
     .pipe(notify({ message: 'Less task complete'}));
 });
 
@@ -201,7 +201,7 @@ gulp.task('images', function () {
     .pipe(plumber())
     .pipe(cache(imagemin({ optimizationLevel: 5, progressive: true, interlaced: true })))
     .pipe(gulp.dest('dist/img'))
-    .pipe(browserSync.stream())
+    .pipe(browserSync.stream({stream:true}))
     .pipe(notify({ message: 'Image task complete'}));
 });
 
@@ -209,12 +209,15 @@ gulp.task('watch', function () {
     gulp.watch('src/img/**/*', ['images']);
     gulp.watch('src/js/*.js', ['jshint']);
     gulp.watch('src/less/*.less', ['less']);
+    gulp.watch('src/*.html').on('change', browserSync.reload);
 });
 
 gulp.task('serve', function () {
      browserSync.init({
         server: {
-            baseDir: "src/."
+            baseDir: "src/.",
+            open: "local",
+            browser: "google chrome"
         }
     });
 
