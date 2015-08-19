@@ -13,6 +13,7 @@ var minifycss = require('gulp-minify-css');
 var less      = require('gulp-less');
 var path      = require('path');
 var browserSync = require('browser-sync').create();
+var reload = browserSync.reload;
 var webserver = require('gulp-webserver');
 var plumber   = require('gulp-plumber');
 var gulp      = require('gulp');
@@ -206,9 +207,9 @@ gulp.task('images', function () {
 });
 
 gulp.task('watch', function () {
-    gulp.watch('src/img/**/*', ['images']);
-    gulp.watch('src/js/*.js', ['jshint']);
-    gulp.watch('src/less/*.less', ['less']);
+    gulp.watch('src/img/**/*', ['images'], browserSync.reload);
+    gulp.watch('src/js/*.js', ['jshint'], browserSync.reload);
+    gulp.watch('src/less/*.less', ['less'], browserSync.reload);
     gulp.watch('src/*.html').on('change', browserSync.reload);
 });
 
