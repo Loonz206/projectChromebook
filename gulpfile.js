@@ -17,6 +17,7 @@ var reload = browserSync.reload;
 var webserver = require('gulp-webserver');
 var plumber   = require('gulp-plumber');
 var gulp      = require('gulp');
+var karma = require('gulp-karma');
 var plugins   = require('gulp-load-plugins')(); // Load all gulp plugins
                                               // automatically and attach
                                               // them to the `plugins` object
@@ -232,7 +233,17 @@ gulp.task('serve', function () {
 // ---------------------------------------------------------------------
 // | Main tasks                                                        |
 // ---------------------------------------------------------------------
-
+gulp.task('test', function (){
+    // Be sure to return the stream
+    return gulp.src(testFiles)
+        .pipe(karma({
+            configFile: 'karma.config.js',
+            action: 'run'
+        }))
+        .on('error', function(){
+            throw err;
+        });
+});
 
 gulp.task('archive', function (done) {
     runSequence(
