@@ -1,5 +1,6 @@
 {
   "devDependencies": {
+    "angular-ui-router": "^0.2.15",
     "apache-server-configs": "2.14.0",
     "archiver": "^0.14.3",
     "del": "^1.2.0",
