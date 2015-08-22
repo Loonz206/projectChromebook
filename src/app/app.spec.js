@@ -20,3 +20,10 @@ describe('an addition test', function (){
 		expect(result).not.toEqual(3);
 	});
 });
+
+describe('another silly test', function (){
+	it('should be false', function (){
+		expect(false).toEqual(false);
+	});
+});
+

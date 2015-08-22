@@ -209,6 +209,7 @@ gulp.task('images', function () {
 
 gulp.task('html', function (){
     return gulp.src('src/*.html')
+    .pipe(plumber())
     .pipe(gulp.dest('dist/'))
     .pipe(browserSync.stream({stream:true}))
     .pipe(notify({ message: 'Html task complete'}));
@@ -218,6 +219,7 @@ gulp.task('watch', function () {
     gulp.watch('src/img/**/*', ['images'], browserSync.reload);
     gulp.watch('src/js/*.js', ['jshint'], browserSync.reload);
     gulp.watch('src/less/*.less', ['less'], browserSync.reload);
+    gulp.watch('src/app/*.spec.js', ['test'], browserSync.reload);
     gulp.watch('src/*.html', ['html'], browserSync.reload);
     gulp.watch('src/*.html').on('change', browserSync.reload);
 });
@@ -234,6 +236,8 @@ gulp.task('serve', function () {
     gulp.watch('src/img/**/*', ['images']);
     gulp.watch('src/js/*.js', ['jshint']);
     gulp.watch('src/less/*.less', ['less']);
+    gulp.watch('src/app/*.spec.js', ['test']);
+    gulp.watch('src/*.html', ['html']);
     gulp.watch('src/*.html').on('change', browserSync.reload);
 });
 
@@ -264,5 +268,5 @@ gulp.task('build', function (done) {
 });
 
 gulp.task('default', ['clean'], function(){
-    gulp.start('serve','watch','images', 'jshint', 'html', 'less', browserSync.reload);
+    gulp.start('serve', 'test', 'watch', 'images', 'jshint', 'html','less', browserSync.reload);
 });
