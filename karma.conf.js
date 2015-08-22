@@ -3,8 +3,8 @@ module.exports = function(config) {
     browsers: ['Chrome'],
     frameworks: ['jasmine'],
     files: [
-      'src/**/*.js',
-      'test/**/*.spec.js'
+      'src/app/*.spec.js',
+      'src/app/*.js'
     ]
   });
 };
