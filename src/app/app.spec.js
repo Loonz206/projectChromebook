@@ -5,10 +5,18 @@ describe('sometest', function(){
 });
 
 describe('an addition test', function (){
+	var a,b;
+	beforeEach(function(){
+		a = 2;
+		b = 1;
+	});
 	it('should come to the value of three', function(){
-		var a = 2;
-		var b = 1;
 		var result = a + b;
 		expect(result).toEqual(3);
+	});
+	it('should not to come to the value of 13', function (){
+		a = 12;
+		var result = a + b;
+		expect(result).not.toEqual(3);
 	});
 });
