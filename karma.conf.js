@@ -5,6 +5,7 @@ module.exports = function(config) {
     files: [
       'src/app/*.spec.js',
       'src/app/*.js'
-    ]
+    ],
+    reporters: ['dots']
   });
 };
