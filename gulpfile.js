@@ -268,5 +268,5 @@ gulp.task('build', function (done) {
 });
 
 gulp.task('default', ['clean'], function(){
-    gulp.start('serve', 'test', 'watch', 'images', 'jshint', 'html','less', browserSync.reload);
+    gulp.start('serve', 'test', 'watch', 'images', 'jshint', 'html', 'less', browserSync.reload);
 });
