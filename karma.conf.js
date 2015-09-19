@@ -3,7 +3,7 @@ module.exports = function(config) {
     browsers: ['Chrome'],
     frameworks: ['jasmine'],
     files: [
-      'src/app/*.spec.js',
+      'src/app/**/*.spec.js',
       'src/app/*.js'
     ],
     reporters: ['dots']
