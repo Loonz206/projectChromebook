@@ -2,6 +2,7 @@
 label {
     font-weight: bold;
     color:@textColor;
+    margin-bottom: .5em;
 }
 
 input:not([type=submit]):not([type=file]) {
@@ -10,4 +11,34 @@ input:not([type=submit]):not([type=file]) {
     .BorderRadius(4px);
     border: 1px solid @dividerColor;
     color: lighten(@textColor, 20% );
+    padding-left: .5em;
    }
+
+textarea {
+   	width: 100%;
+   	height: auto;
+   	.BorderRadius(4px);
+   	border: 1px solid @dividerColor;
+   	color: lighten(@textColor, 20%);
+   	padding-left: .5em;
+}
+
+button {
+	height:36px;
+	min-width: 220px;
+	color:@white;
+	background-color: @primaryColor;
+	border:1px solid darken(@primaryColor, 20%);
+	.BorderRadius(4px);
+	text-align: center;
+	&:hover,
+	&:focus {
+		background-color: darken(@primaryColor, 20%);
+		border:1px solid darken(@primaryColor, 40%);
+	}
+	&:active {
+		color:@primaryColor;
+		background-color: @white;
+		border:1px solid @primaryColor;
+	}
+}
