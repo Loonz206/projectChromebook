@@ -1,5 +1,6 @@
 {
   "devDependencies": {
+    "angular": "^1.4.6",
     "angular-ui-router": "^0.2.15",
     "apache-server-configs": "2.14.0",
     "archiver": "^0.14.3",
@@ -32,6 +33,7 @@
     "karma-chrome-launcher": "^0.2.0",
     "karma-jasmine": "^0.3.6",
     "mocha": "^2.2.4",
+    "modernizr": "^3.0.0",
     "normalize.css": "3.0.3",
     "path": "^0.11.14",
     "picturefill": "^2.3.1",
