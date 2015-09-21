@@ -223,7 +223,7 @@ gulp.task('watch', function () {
     gulp.watch('src/*.html').on('change', browserSync.reload);
 });
 
-gulp.task('serve', function () {
+gulp.task('serve', ['images', 'jshint', 'html', 'less'], function () {
      browserSync.init({
         server: {
             baseDir: "src/.",
@@ -259,13 +259,8 @@ gulp.task('archive', function (done) {
     done);
 });
 
-gulp.task('build', function (done) {
-    runSequence(
-        ['clean', 'images', 'jshint', 'less', 'html' ],
-        'copy',
-    done);
-});
+gulp.task('build', ['images', 'jshint', 'less', 'html']);
 
 gulp.task('default', ['clean'], function(){
-    gulp.start('serve', 'test', 'watch', 'images', 'jshint', 'html', 'less', browserSync.reload);
+    gulp.start('serve', 'test', 'watch', browserSync.reload);
 });
