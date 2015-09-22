@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="" ng-app>
+<html class="no-js" lang="" ng-app="app">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -19,23 +19,18 @@
     <link rel="stylesheet" href="css/main.css">
     <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic' rel='stylesheet' type='text/css'>
-    <script src="app/modernizr-custom.js"></script>
+    <script src="js/modernizr-custom.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
 </head>
-<body>
+<body ng-controller="FirstController as first">
         <!--[if lt IE 9]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
             <![endif]-->
 
             <!-- Add your site or application content here -->
-            <main>
-                <label for="">Input field</label>
-                <input type="text" ng-model="test" placeholder="insert text here"/>
-                <h1 ng-bind="test"></h1>
-                <textarea name="" id="" cols="30" rows="10"></textarea>
-                <button>This is a button</button>
-            </main>
-
+            <div ng-class="first-greeting">
+                {{first.greeting}} {{World}}
+            </div>
 
 
 
@@ -46,6 +41,7 @@
             <script>window.jQuery || document.write('<script src="vendor/jquery/jquery-2.1.4.min.js">\x3C/script>')</script>
             <script>window.angular || document.write('<script src="vendor/angular/angular.min.js">\x3C/script>')</script>
             <script>window.fontawesome || document.write('<link src="assets/font-awesome-4.4.0/css/font-awesome.min.css">\x3C/link>')</script>
+            <script src="app/app.js"></script>
             <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
             <script>
                 (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=

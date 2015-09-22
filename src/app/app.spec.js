@@ -27,3 +27,19 @@ describe('another silly test', function (){
 	});
 });
 
+describe('', function (){
+	var a = 7;
+	var b = 4;
+	it('totals 11', function (){
+		expect(a + b).toEqual(11);
+	});
+});
+
+describe('', function (){
+	var a = 7;
+	var b = 4;
+	it('totals 11', function (){
+		expect(a + b).not.toEqual(13);
+	});
+});
+

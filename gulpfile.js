@@ -153,7 +153,7 @@ gulp.task('copy:normalize', function () {
 gulp.task('lint:js', function () {
     return gulp.src([
         'gulpfile.js',
-        dirs.src + '/js/**/*.js'
+        dirs.src + '/app/**/*.js'
     ]).pipe(plugins.jscs())
       .pipe(plugins.jshint())
       .pipe(plugins.jshint.reporter('jshint-stylish'))
@@ -170,7 +170,7 @@ gulp.task('webserver', function () {
 });
 
 gulp.task('jshint', function () {
-    return gulp.src('src/js/**/*.js')
+    return gulp.src('src/app/**/*.js')
     .pipe(plumber())
     .pipe(jshint('.jshintrc'))
     .pipe(jshint.reporter('jshint-stylish'))
@@ -216,9 +216,9 @@ gulp.task('html', function (){
 
 gulp.task('watch', function () {
     gulp.watch('src/img/**/*', ['images'], browserSync.reload);
-    gulp.watch('src/js/**/*.js', ['jshint'], browserSync.reload);
+    gulp.watch('src/app/**/*.js', ['jshint'], browserSync.reload);
     gulp.watch('src/less/*.less', ['less'], browserSync.reload);
-    gulp.watch('src/js/app/*.spec.js', ['test'], browserSync.reload);
+    gulp.watch('src/app/**/*.spec.js', ['test'], browserSync.reload);
     gulp.watch('src/*.html', ['html'], browserSync.reload);
     gulp.watch('src/*.html').on('change', browserSync.reload);
 });
@@ -233,9 +233,9 @@ gulp.task('serve', ['images', 'jshint', 'html', 'less'], function () {
     });
 
     gulp.watch('src/img/**/*', ['images']);
-    gulp.watch('src/js/**/*.js', ['jshint']);
+    gulp.watch('src/app/**/*.js', ['jshint']);
     gulp.watch('src/less/*.less', ['less']);
-    gulp.watch('src/js/app/*.spec.js', ['test']);
+    gulp.watch('src/app/**/*.spec.js', ['test']);
     gulp.watch('src/*.html', ['html']);
     gulp.watch('src/*.html').on('change', browserSync.reload);
 });
@@ -247,7 +247,7 @@ gulp.task('serve', ['images', 'jshint', 'html', 'less'], function () {
 gulp.task('test', function (done) {
   new Server({
     configFile: __dirname + '/karma.conf.js',
-    singleRun: true
+    singleRun: false
   }, done).start();
 });
 
