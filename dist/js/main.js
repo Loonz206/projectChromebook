@@ -1,3 +1,9 @@
+(function(){
+	/*jshint unused: false */
+	var app = angular.module('app', [])
+
+});
+
 
 describe('sometest', function(){
 	it('should be true', function(){
@@ -25,6 +31,22 @@ describe('an addition test', function (){
 describe('another silly test', function (){
 	it('should be false', function (){
 		expect(false).toEqual(false);
+	});
+});
+
+describe('', function (){
+	var a = 7;
+	var b = 4;
+	it('totals 11', function (){
+		expect(a + b).toEqual(11);
+	});
+});
+
+describe('', function (){
+	var a = 7;
+	var b = 4;
+	it('totals 11', function (){
+		expect(a + b).not.toEqual(13);
 	});
 });
 
