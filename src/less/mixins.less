@@ -2,6 +2,7 @@
  * These are the functions used throughout the application. This is where
  * overwrites that are not specific to components should be maintained.
  */
+
 .BorderRadius (@radius: 12px) {
   -moz-border-radius: @radius @radius @radius @radius;
   -webkit-border-radius: @radius @radius @radius @radius;
@@ -27,6 +28,7 @@
   -ms-transition: @prop @time @ease;
   transition: @prop @time @ease;
 }
+
 /* cubic-bezier, animationName, point-01, point-02, point-03, point-04 */
 .WishListAnimation(@keyFrame, @sec, @p1, @p2, @p3, @p4) {
   -webkit-animation: @keyFrame @sec;
@@ -76,7 +78,6 @@
   background-image: linear-gradient(@origin, @start, @stop, @start);
 }
 
-
 .GradientQuick (@origin: left, @alpha: 0.2) {
   background-image: -webkit-linear-gradient(@origin, rgba(0,0,0,0.0)  , rgba(0,0,0,@alpha));
   background-image: -moz-linear-gradient(@origin, rgba(0,0,0,0.0)  , rgba(0,0,0,@alpha));
@@ -100,6 +101,7 @@
   //@top cannot be a %, @sides must be remaining width of containing element.
   vertical-align: top;
 }
+
 /* loading animation */
 .AnimationDelay(@top, @right, @bottom, @left, @delay){
   top:@top;

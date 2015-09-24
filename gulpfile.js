@@ -231,13 +231,6 @@ gulp.task('serve', ['images', 'jshint', 'html', 'less'], function () {
             browser: "google chrome"
         }
     });
-
-    gulp.watch('src/img/**/*', ['images']);
-    gulp.watch('src/app/**/*.js', ['jshint']);
-    gulp.watch('src/less/*.less', ['less']);
-    gulp.watch('src/app/**/*.spec.js', ['test']);
-    gulp.watch('src/*.html', ['html']);
-    gulp.watch('src/*.html').on('change', browserSync.reload);
 });
 
 
@@ -262,5 +255,5 @@ gulp.task('archive', function (done) {
 gulp.task('build', ['images', 'jshint', 'less', 'html']);
 
 gulp.task('default', ['clean'], function(){
-    gulp.start('serve', 'test', 'watch', browserSync.reload);
+    gulp.start('serve','watch', browserSync.reload);
 });

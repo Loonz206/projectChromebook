@@ -42,4 +42,3 @@ describe('', function (){
 		expect(a + b).not.toEqual(13);
 	});
 });
-
