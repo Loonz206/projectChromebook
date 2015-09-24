@@ -218,7 +218,6 @@ gulp.task('watch', function () {
     gulp.watch('src/img/**/*', ['images'], browserSync.reload);
     gulp.watch('src/app/**/*.js', ['jshint'], browserSync.reload);
     gulp.watch('src/less/*.less', ['less'], browserSync.reload);
-    gulp.watch('src/app/**/*.spec.js', ['test'], browserSync.reload);
     gulp.watch('src/*.html', ['html'], browserSync.reload);
     gulp.watch('src/*.html').on('change', browserSync.reload);
 });

@@ -1,4 +1,7 @@
-angular.module('projectChromebook', {})
-    .controller('TestController', function (){
+'use strict';
 
+angular.module('projectChromebook', ['ui-router'])
+
+    .config('',function() {
+        //Routes will go here
     });
