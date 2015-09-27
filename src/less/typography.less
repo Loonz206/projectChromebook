@@ -22,6 +22,20 @@ body {
 
 h1,h2,h3,h4,h5,h6 {
     font-family: @sansSerif;
+    a {
+        color:@primaryColor;
+        text-decoration: none;
+        border: none;
+        transition: 1.5s ease all;
+        &:hover, &:focus {
+            color: darken(@primaryColor, 20%);
+            border: none;
+        }
+        &:active {
+            color:@white;
+            background:@primaryColor;
+        }
+    }
 }
 
 h1 {
@@ -179,7 +193,7 @@ dd + dd::before {
     li {
         display: inline-block;
         line-height: 60px;
-        width: calc(~"100% / 4");
+        width:calc(98%/4);
         a {
             color:@white;
             &:hover, &:focus {
@@ -191,6 +205,10 @@ dd + dd::before {
             }
         }
     }
+}
+
+::-moz-selection {
+    background:@accentColor;
 }
 
 ::selection {

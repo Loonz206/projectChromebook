@@ -21,6 +21,13 @@ angular.module('myApp', [
           pageTitle: 'About'
         }
       })
+      .state('stylesheet', {
+        url: '/stylesheet',
+        templateUrl: 'app/stylesheet/stylesheet.html',
+        data: {
+          pageTitle: 'Stylesheet'
+        }
+      })
       .state('contact', {
         url: '/contact',
         templateUrl: 'app/contact/contact.html',
