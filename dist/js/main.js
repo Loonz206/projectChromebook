@@ -1,5 +1,6 @@
 angular.module('myApp', [
-  'ui.router'
+  'ui.router',
+  'firebase'
 ])
 
 .config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
@@ -37,11 +38,19 @@ angular.module('myApp', [
       });
 }])
 
-.controller( 'AppCtrl', function AppCtrl ( $scope ) {
+.controller( 'AppCtrl', function AppCtrl ( $scope, $firebaseObject ) {
   $scope.$on('$stateChangeSuccess', function(event, toState){
     if ( angular.isDefined( toState.data.pageTitle ) ) {
       $scope.pageTitle = toState.data.pageTitle + ' || ProjectChromebook' ;
     }
+
+   var ref = new Firebase("http://projectchromebook.firebaseio.com");
+
+   // download the data into a local object
+    var syncObject = $firebaseObject(ref);
+    // synchronize the object with a three-way data binding
+    // click on `index.html` above to see it used in the DOM!
+    syncObject.$bindTo($scope, "data");
   });
 });
 describe('sometest', function(){
