@@ -207,7 +207,7 @@ gulp.task('images', function () {
 });
 
 gulp.task('html', function (){
-    return gulp.src('src/*.html')
+    return gulp.src('src/**/*.html')
     .pipe(plumber())
     .pipe(gulp.dest('dist/'))
     .pipe(browserSync.stream({stream:true}))
@@ -218,8 +218,8 @@ gulp.task('watch', function () {
     gulp.watch('src/img/**/*', ['images'], browserSync.reload);
     gulp.watch('src/app/**/*.js', ['jshint'], browserSync.reload);
     gulp.watch('src/less/*.less', ['less'], browserSync.reload);
-    gulp.watch('src/*.html', ['html'], browserSync.reload);
-    gulp.watch('src/*.html').on('change', browserSync.reload);
+    gulp.watch('src/**/*.html', ['html'], browserSync.reload);
+    gulp.watch('src/**/*.html').on('change', browserSync.reload);
 });
 
 gulp.task('serve', ['images', 'jshint', 'html', 'less'], function () {
