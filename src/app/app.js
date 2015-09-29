@@ -39,6 +39,7 @@ angular.module('myApp', [
 }])
 
 .controller( 'AppCtrl', function AppCtrl ( $scope, $firebaseObject ) {
+  var Firebase;
   $scope.$on('$stateChangeSuccess', function(event, toState){
     if ( angular.isDefined( toState.data.pageTitle ) ) {
       $scope.pageTitle = toState.data.pageTitle + ' || ProjectChromebook' ;

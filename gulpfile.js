@@ -16,6 +16,9 @@ var browserSync = require('browser-sync').create();
 var reload = browserSync.reload;
 var webserver = require('gulp-webserver');
 var plumber   = require('gulp-plumber');
+var gutil = require('gulp-util');
+var filesize = require('gulp-filesize');
+var beep = require('beepbeep');
 var gulp      = require('gulp');
 var Server = require('karma').Server;
 var plugins   = require('gulp-load-plugins')(); // Load all gulp plugins
@@ -27,6 +30,11 @@ var runSequence = require('run-sequence');    // Temporary solution until gulp 4
 
 var pkg  = require('./package.json');
 var dirs = pkg['h5bp-configs'].directories;
+
+var onError = function (err) {
+    beep([1000, 500, 1500]);
+    gutil.log(gutil.colors.red(err));
+};
 
 // ---------------------------------------------------------------------
 // | Helper tasks                                                      |
@@ -174,32 +182,40 @@ gulp.task('jshint', function () {
     .pipe(plumber())
     .pipe(jshint('.jshintrc'))
     .pipe(jshint.reporter('jshint-stylish'))
+    .pipe(jshint.reporter('fail'))
+    .pipe(plumber({errorHandler: onError}))
     .pipe(concat('main.js'))
     .pipe(gulp.dest('dist/js'))
+    .pipe(filesize())
     .pipe(rename({suffix: '.min'}))
     .pipe(uglify())
     .pipe(gulp.dest('dist/js'))
+    .pipe(filesize())
     .pipe(browserSync.stream({stream:true}))
-    .pipe(notify({ message: 'Jshint task complete'}));
+    .pipe(notify({ message: 'Jshint task complete'}))
+    .on('error', gutil.log);
 });
 
 gulp.task('less', function () {
     return gulp.src('src/less/main.less')
-    .pipe(plumber())
+    .pipe(plumber({errorHandler: onError}))
     .pipe(sourcemaps.init())
     .pipe(less())
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('src/css'))
+    .pipe(filesize())
     .pipe(rename({suffix: '.min'}))
     .pipe(minifycss())
     .pipe(gulp.dest('dist/css'))
+    .pipe(filesize())
     .pipe(browserSync.stream({stream:true}))
-    .pipe(notify({ message: 'Less task complete'}));
+    .pipe(notify({ message: 'Less task complete'}))
+    .on('error', gutil.log);
 });
 
 gulp.task('images', function () {
     return gulp.src('src/img/**/*')
-    .pipe(plumber())
+    .pipe(plumber({errorHandler: onError}))
     .pipe(cache(imagemin({ optimizationLevel: 5, progressive: true, interlaced: true })))
     .pipe(gulp.dest('dist/img'))
     .pipe(browserSync.stream({stream:true}))
@@ -208,7 +224,7 @@ gulp.task('images', function () {
 
 gulp.task('html', function (){
     return gulp.src('src/**/*.html')
-    .pipe(plumber())
+    .pipe(plumber({errorHandler: onError}))
     .pipe(gulp.dest('dist/'))
     .pipe(browserSync.stream({stream:true}))
     .pipe(notify({ message: 'Html task complete'}));
