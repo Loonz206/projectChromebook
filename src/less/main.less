@@ -3,6 +3,7 @@
 @import url('mixins.less');
 @import url('typography.less');
 @import url('forms.less');
+@import url('animate.less');
 
 header {
 	height: 60px;
@@ -38,6 +39,24 @@ main, .wrapper {
     width:100%;
     height:auto;
     display: block;
+}
+
+.yourElement {
+    height:50px;
+    width:50px;
+    background-color: @secondaryColor;
+    color:white;
+    line-height: 50px;
+    text-align: center;
+    &:hover,
+    &:focus,
+    &:active {
+        #a.animated;           // initialize animation
+        #a.iterate(infinite);  // repeat the animation forever
+        #a.delay(7s);          // delay everything for 2 seconds
+        #a.duration(3s);       // each iteration will play for 3 seconds
+          .rubberBand;      // initialize the animation effect (notice the lack of #a prefix)
+    }
 }
 
 @import url('tablet.less');
