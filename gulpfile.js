@@ -31,6 +31,7 @@ var runSequence = require('run-sequence');    // Temporary solution until gulp 4
 var pkg  = require('./package.json');
 var dirs = pkg['h5bp-configs'].directories;
 
+//Beep Error Messaging + Red Coloring FTW.
 var onError = function (err) {
     beep([1000, 500, 1500]);
     gutil.log(gutil.colors.red(err));
