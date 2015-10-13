@@ -21,8 +21,6 @@
     <link href='https://fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic' rel='stylesheet' type='text/css'>
     <script src="js/modernizr-custom.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.js"></script>
-    <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
-    <script src="https://cdn.firebase.com/libs/angularfire/1.1.2/angularfire.min.js"></script>
 </head>
 <body>
         <!--[if lt IE 9]>
@@ -59,6 +57,26 @@
                 e.src='https://www.google-analytics.com/analytics.js';
                 r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
                 ga('create','UA-XXXXX-X','auto');ga('send','pageview');
+            </script>
+            <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+            <script src="https://cdn.firebase.com/libs/angularfire/1.1.2/angularfire.min.js"></script>
+            <!-- Added application scripts -->
+            <!--This is strange -->
+            <script type="text/javascript">
+                var lblCurrentMessage = document.getElementById('lblCurrentMessage'),
+                    txtNewMessage = document.getElementById('txtNewMessage'),
+                    btUpdateMessage = document.getElementById('btUpdateMessage'),
+                    rootRef = new Firebase('https://projectChromebook.firebaseio.com');
+
+                    currentMessageRef = rootRef.child('currentMessage');
+
+                    btUpdateMessage.addEventListener('click', function() {
+                        currentMessageRef.set(txtNewMessage.value);
+                        txtNewMessage.value = '';
+                    });
+                    currentMessageRef.on('value', function(snapshot){
+                        lblCurrentMessage.innerText = snapshot.val();
+                    });
             </script>
             <script src="js/angular-ui-router.js"></script>
             <script src="app/app.js"></script>
