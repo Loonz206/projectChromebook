@@ -231,12 +231,17 @@ gulp.task('html', function (){
     .pipe(notify({ message: 'Html task complete'}));
 });
 
+gulp.slurped = false; //step 1
+
 gulp.task('watch', function () {
-    gulp.watch('src/img/**/*', ['images'], browserSync.reload);
-    gulp.watch('src/app/**/*.js', ['jshint'], browserSync.reload);
-    gulp.watch('src/less/*.less', ['less'], browserSync.reload);
-    gulp.watch('src/**/*.html', ['html'], browserSync.reload);
-    gulp.watch('src/**/*.html').on('change', browserSync.reload);
+    if(!gulp.slurped){ //step 2
+        gulp.watch('src/img/**/*', ['images'], browserSync.reload);
+        gulp.watch('src/app/**/*.js', ['jshint'], browserSync.reload);
+        gulp.watch('src/less/*.less', ['less'], browserSync.reload);
+        gulp.watch('src/**/*.html', ['html'], browserSync.reload);
+        gulp.watch('src/**/*.html').on('change', browserSync.reload);
+        gulp.slurped = true; //step 3
+    }
 });
 
 gulp.task('serve', ['images', 'jshint', 'html', 'less'], function () {
