@@ -165,7 +165,7 @@ gulp.task('lint:js', function () {
         dirs.src + '/app/**/*.js'
     ]).pipe(plugins.jscs())
       .pipe(plugins.jshint())
-      .pipe(plugins.jshint.reporter('jshint-stylish'))
+      .pipe(plugins.jshint.reporter(stylish))
       .pipe(plugins.jshint.reporter('fail'));
 });
 
@@ -182,7 +182,7 @@ gulp.task('jshint', function () {
     return gulp.src('src/app/**/*.js')
     .pipe(plumber())
     .pipe(jshint('.jshintrc'))
-    .pipe(jshint.reporter('jshint-stylish'))
+    .pipe(jshint.reporter(stylish))
     .pipe(jshint.reporter('fail'))
     .pipe(plumber({errorHandler: onError}))
     .pipe(concat('main.js'))
@@ -231,15 +231,16 @@ gulp.task('html', function (){
     .pipe(notify({ message: 'Html task complete'}));
 });
 
+//watches the gulpfile as its running as well
 gulp.slurped = false; //step 1
 
 gulp.task('watch', function () {
     if(!gulp.slurped){ //step 2
-        gulp.watch('src/img/**/*', ['images'], browserSync.reload);
-        gulp.watch('src/app/**/*.js', ['jshint'], browserSync.reload);
-        gulp.watch('src/less/*.less', ['less'], browserSync.reload);
-        gulp.watch('src/**/*.html', ['html'], browserSync.reload);
-        gulp.watch('src/**/*.html').on('change', browserSync.reload);
+        gulp.watch('src/img/**/*', ['images'], reload);
+        gulp.watch('src/app/**/*.js', ['jshint'], reload);
+        gulp.watch('src/less/*.less', ['less'], reload);
+        gulp.watch('src/**/*.html', ['html'], reload);
+        gulp.watch('src/**/*.html').on('change', reload);
         gulp.slurped = true; //step 3
     }
 });
@@ -276,5 +277,5 @@ gulp.task('archive', function (done) {
 gulp.task('build', ['images', 'jshint', 'less', 'html']);
 
 gulp.task('default', ['clean'], function(){
-    gulp.start('serve','watch', browserSync.reload);
+    gulp.start('serve','watch', reload);
 });
