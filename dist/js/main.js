@@ -36,6 +36,7 @@ angular.module('myApp', [
           pageTitle: 'Contact'
         }
       });
+
 }])
 
 .controller( 'AppCtrl', function AppCtrl ( $scope ) {
