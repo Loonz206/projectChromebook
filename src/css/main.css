@@ -421,7 +421,7 @@ h3 a:active,
 h4 a:active,
 h5 a:active,
 h6 a:active {
-  color: #ffffff;
+  color: #FFFFFF;
   background: #3498db;
 }
 h1 {
@@ -504,18 +504,18 @@ hr {
   border: 0;
   height: 1px;
   background: #444444;
-  background-image: linear-gradient(to right, #cccccc, #444444, #cccccc);
+  background-image: linear-gradient(to right, #CCCCCC, #444444, #CCCCCC);
 }
 blockquote {
   background: #f9f9f9;
-  border-left: 10px solid #cccccc;
+  border-left: 10px solid #CCCCCC;
   margin: 1.5em 10px;
   padding: 0.5em 10px;
   font-family: Georgia, 'Times New Roman', 'Times', serif;
   quotes: "\201C" "\201D" "\2018" "\2019";
 }
 blockquote:before {
-  color: #cccccc;
+  color: #CCCCCC;
   content: open-quote;
   font-size: 4em;
   line-height: 0.1em;
@@ -539,7 +539,7 @@ a:focus {
   border-bottom: 1px solid #3498db;
 }
 a:active {
-  color: #ffffff;
+  color: #FFFFFF;
   background: #3498db;
 }
 dt,
@@ -577,14 +577,14 @@ dd + dd::before {
   width: calc(24.5%);
 }
 .wrapper li a {
-  color: #ffffff;
+  color: #FFFFFF;
 }
 .wrapper li a:hover,
 .wrapper li a:focus {
-  border-bottom: 1px solid #ffffff;
+  border-bottom: 1px solid #FFFFFF;
 }
 .wrapper li a:active {
-  color: #ffffff;
+  color: #FFFFFF;
   background: #3498db;
 }
 ::-moz-selection {
@@ -648,7 +648,7 @@ textarea {
 button {
   height: 36px;
   min-width: 220px;
-  color: #ffffff;
+  color: #FFFFFF;
   background-color: #3498db;
   border: 1px solid #196090;
   -moz-border-radius: 4px 4px 4px 4px;
@@ -663,7 +663,7 @@ button:focus {
 }
 button:active {
   color: #3498db;
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   border: 1px solid #3498db;
 }
 /*
@@ -5242,7 +5242,7 @@ button:active {
 header {
   height: 60px;
   background-color: #3498db;
-  box-shadow: 0 1px 1px 1px #cccccc;
+  box-shadow: 0 1px 1px 1px #CCCCCC;
 }
 nav ul {
   display: inline;
