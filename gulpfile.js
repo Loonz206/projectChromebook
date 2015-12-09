@@ -1,6 +1,7 @@
 var fs        = require('fs');
 var path      = require('path');
 var jshint    = require('gulp-jshint');
+var shell     = require('gulp-shell');
 var stylish   = require('jshint-stylish');
 var concat    = require('gulp-concat');
 var uglify    = require('gulp-uglify');
@@ -194,6 +195,7 @@ gulp.task('jshint', function () {
     .pipe(filesize())
     .pipe(browserSync.stream({stream:true}))
     .pipe(notify({ message: 'Jshint task complete'}))
+    .pipe(shell(['say "J S Hint task complete"']))
     .on('error', gutil.log);
 });
 
