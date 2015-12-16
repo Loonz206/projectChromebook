@@ -195,7 +195,6 @@ gulp.task('jshint', function () {
     .pipe(filesize())
     .pipe(browserSync.stream({stream:true}))
     .pipe(notify({ message: 'Jshint task complete'}))
-    .pipe(shell(['say "J S Hint task complete"']))
     .on('error', gutil.log);
 });
 
@@ -213,7 +212,6 @@ gulp.task('less', function () {
     .pipe(filesize())
     .pipe(browserSync.stream({stream:true}))
     .pipe(notify({ message: 'Less task complete'}))
-    .pipe(shell(['say "Less task complete"']))
     .on('error', gutil.log);
 });
 
@@ -223,7 +221,6 @@ gulp.task('images', function () {
     .pipe(cache(imagemin({ optimizationLevel: 5, progressive: true, interlaced: true })))
     .pipe(gulp.dest('dist/img'))
     .pipe(browserSync.stream({stream:true}))
-    .pipe(shell(['say "Image task complete"']))
     .pipe(notify({ message: 'Image task complete'}));
 });
 
@@ -232,7 +229,6 @@ gulp.task('html', function (){
     .pipe(plumber({errorHandler: onError}))
     .pipe(gulp.dest('dist/'))
     .pipe(browserSync.stream({stream:true}))
-    .pipe(shell(['say "Html task complete"']))
     .pipe(notify({ message: 'Html task complete'}));
 });
 
