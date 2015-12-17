@@ -194,8 +194,7 @@ gulp.task('jshint', function () {
     .pipe(gulp.dest('dist/js'))
     .pipe(filesize())
     .pipe(browserSync.stream({stream:true}))
-    .pipe(notify({ message: 'Jshint task complete'}))
-    .on('error', gutil.log);
+    .pipe(notify({ message: 'Jshint task complete'}));
 });
 
 gulp.task('less', function () {
@@ -213,6 +212,7 @@ gulp.task('less', function () {
     .pipe(browserSync.stream({stream:true}))
     .pipe(notify({ message: 'Less task complete'}))
     .on('error', gutil.log);
+    //.pipe(shell(['say "There was an Less Error, Master Lenny"']));
 });
 
 gulp.task('images', function () {
@@ -277,6 +277,4 @@ gulp.task('archive', function (done) {
 
 gulp.task('build', ['images', 'jshint', 'less', 'html']);
 
-gulp.task('default', ['clean'], function(){
-    gulp.start('serve','watch', reload);
-});
+gulp.task('default', ['clean', 'serve', 'watch']);
