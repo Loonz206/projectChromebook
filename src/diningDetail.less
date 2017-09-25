@@ -1,0 +1,94 @@
+// diningDetail less file
+
+.dining-title-area {
+    padding:10px 15px;
+    h1 {
+        float: left;
+        .Responsive(@xsSize, {
+            clear:both;
+            margin-bottom: 20px;
+        });
+    }
+    .price-container {
+        margin-top: 20px;
+        strong {
+            float:left;
+            line-height: 36px; //to match button
+            .Responsive(@xsSize, {
+                float:right;
+            });
+        }
+        button {
+            float:right;
+        }
+    }
+    .prices {
+        float:left;
+        .Responsive(@xsSize, {
+            float:right;
+        });
+    }
+}
+
+.restaurant-menu-container {
+    width:100%;
+    height:auto;
+    display: block;
+    margin-top:20px;
+    button {
+        margin-bottom: 20px;
+    }
+    img {
+        width:100%;
+    }
+}
+
+.dining-horizontal-strip {
+    height:55px;
+    background-color: @transparentDark;
+    position:relative;
+    bottom:55px;
+}
+
+.print-menu-link {
+    margin-bottom: 20px;
+    display: block;
+}
+
+.dining-detail-content-area {
+    padding: 40px 20px 0px 20px;
+
+    .dining-sidebar {
+        float:right;
+    }
+
+    .prices {
+        ul {
+            margin:0;
+            padding:0;
+            li {
+                list-style-type: none;
+                display: inline;
+                width:33%;
+                &:first-child {
+                    padding-right:40px;
+                }
+            }
+        }
+    }
+
+    .price, .promo-price {
+        color: @textColorGrey;
+        font-weight: bold;
+        &.strike-through {
+            text-decoration: line-through;
+        }
+    }
+
+    .promo-price {
+        color:@red;
+        font-weight:normal;
+    }
+}
+
+
